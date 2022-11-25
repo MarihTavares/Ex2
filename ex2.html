@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <link rel="stylesheet" href="ex2.css">
+</head>
+<body>
+
+
+    
+        <h2>Conversão para Celsius ou Fahreinheit</h2>
+
+        <p id="subtitulo">Escolha para qual você deseja converter:</p>
+
+        <div class="caixas">
+
+            <input type="radio" id="celcius" value="celcius" name="opcao">
+            <label for="celsius">Celsius</label>
+
+            
+            <input type="radio" id="fahreinheit" value="fahreinheit" name="opcao">
+            <label for="fahreinheit">Fahreinheit</label>
+
+        </div>
+
+            <p>
+                <label for="valor">Digite a temperatura:</label>
+                <input type="number" id="valor">
+            </p>
+       
+
+        <button type="button" onclick="Calcular()">Calcular</button>
+
+        <h3 id="exibir"> </h3>
+    
+    
+
+    <script>
+
+        function Calcular() {
+            
+            let opcao = document.getElementById("celcius")
+            
+            if(opcao.checked == true){
+                let temperatura = document.getElementById("valor").value
+
+                // Calcular para Celcius
+                let cel = ( temperatura - 32)/ 1.8
+                document.getElementById("exibir").innerHTML = cel
+
+            }else {
+                let temperatura = document.getElementById("valor").value
+
+                // Calcular para fahreinheit
+                let fah = temperatura * 1.8 + 32
+                document.getElementById("exibir").innerHTML = fah
+            }          
+        }
+
+    </script>
+
+</body>
+</html>
